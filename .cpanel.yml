@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/nqatsxqe/public_html/
+    - export DEPLOYPATH=/home/nqatsxqe/harigopinath.com
     - /bin/cp -R . $DEPLOYPATH
