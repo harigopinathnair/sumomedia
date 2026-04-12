@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer --version)",
+      "Bash(where composer:*)",
+      "Bash(php -r \"echo PHP_VERSION;\")",
+      "Bash(/c/wamp64/bin/php/php8.2.29/php.exe -r 'echo PHP_VERSION;')",
+      "Read(//c/wamp64/bin/**)",
+      "Read(//c/wamp64//**)",
+      "Bash(/c/wamp64/bin/php/php8.2.29/php.exe /c/wamp64/www/worthycite/composer.phar require mailgun/mailgun-php symfony/http-client nyholm/psr7)",
+      "Bash(/c/wamp64/bin/php/php8.2.29/php.exe /c/wamp64/www/worthycite/composer.phar config allow-plugins.php-http/discovery true)",
+      "Bash(/c/wamp64/bin/php/php8.2.29/php.exe /c/wamp64/www/worthycite/composer.phar install --no-interaction)"
+    ]
+  }
+}
