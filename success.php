@@ -1,13 +1,30 @@
 ﻿<?php
-// Only allow POST requests, reject direct URL access
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: index.php');
+// Allow GET access when redirected after AJAX submission
+if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+    if (!empty($_GET['submitted'])) {
+        $name = htmlspecialchars(trim($_GET['name'] ?? 'there'));
+        // Fall through to render success HTML below
+    } else {
+        header('Location: index.php');
+        exit;
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+$is_ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
+    && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+
+function json_out_s(bool $ok, string $msg = '', string $name = ''): void {
+    header('Content-Type: application/json');
+    echo json_encode(['ok' => $ok, 'error' => $msg, 'name' => $name]);
     exit;
 }
 
 require_once __DIR__ . '/includes/captcha.php';
 if (!captcha_check()) {
-    header('Location: index.php?error=captcha#contact');
+    if ($is_ajax) json_out_s(false, 'Incorrect anti-spam answer. Please try again.');
+    header('Location: index.php#contact');
     exit;
 }
 
@@ -101,6 +118,10 @@ try {
     // Silently fail, don't break the success page for the user
     error_log('Lead save error: ' . $e->getMessage());
 }
+
+if ($is_ajax) json_out_s(true, '', $name);
+
+} // end POST block
 ?>
 <!DOCTYPE html>
 <html lang="en">

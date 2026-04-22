@@ -4,15 +4,26 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
+$is_ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
+    && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
+
+function nl_json(bool $ok, string $msg = ''): void {
+    header('Content-Type: application/json');
+    echo json_encode(['ok' => $ok, 'error' => $msg]);
+    exit;
+}
+
 require_once __DIR__ . '/includes/captcha.php';
 if (!captcha_check()) {
-    header('Location: index.php?error=captcha#newsletter');
+    if ($is_ajax) nl_json(false, 'Incorrect anti-spam answer. Please try again.');
+    header('Location: index.php#newsletter');
     exit;
 }
 
 $email = trim(filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL));
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    if ($is_ajax) nl_json(false, 'Please enter a valid email address.');
     header('Location: index.php#newsletter');
     exit;
 }
@@ -67,7 +78,8 @@ try {
     error_log('Newsletter error: ' . $e->getMessage());
 }
 
-// Redirect back with success flag
+if ($is_ajax) nl_json(true);
+// Redirect back with success flag (non-AJAX fallback)
 $redirect = $page_url ?: 'index.php';
 header('Location: ' . $redirect . (str_contains($redirect, '?') ? '&' : '?') . 'subscribed=1#newsletter');
 exit;

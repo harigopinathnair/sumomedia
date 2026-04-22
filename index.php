@@ -17,11 +17,6 @@
 
 <?php $nav_prefix = ''; require 'includes/nav.php'; ?>
 
-<?php if (!empty($_GET['error']) && $_GET['error'] === 'captcha'): ?>
-<div style="background:#fee2e2;border-bottom:1px solid #fca5a5;padding:0.75rem 1rem;text-align:center;font-size:0.88rem;color:#991b1b;font-family:var(--font-body);">
-  Incorrect anti-spam answer. Please try again — scroll down to the form.
-</div>
-<?php endif; ?>
 
 <!-- CERTIFICATIONS STRIP -->
 <div class="certs-strip">
@@ -68,7 +63,8 @@
     <div class="hero-form-box">
       <h3>Get Your Free Growth Audit</h3>
       <p>I'll analyse your website and share a roadmap for growth!</p>
-      <form class="audit-form utm-form" method="POST" action="success.php">
+      <form class="audit-form utm-form" id="form-audit" method="POST" action="success.php">
+        <div class="form-inline-msg" id="msg-audit"></div>
         <input type="hidden" name="form_type" value="audit">
         <input type="hidden" name="utm_url" class="utm-url">
         <input type="hidden" name="utm_source" class="utm-source">
@@ -706,7 +702,8 @@
     </div>
 
     <div class="cta-form-box" style="padding: 4rem; box-shadow: 0 40px 80px rgba(15,15,15,0.06); max-width: 100%;">
-      <form class="utm-form form-horizontal-grid" method="POST" action="success.php">
+      <form class="utm-form form-horizontal-grid" id="form-contact" method="POST" action="success.php">
+        <div class="form-inline-msg" id="msg-contact"></div>
         <input type="hidden" name="form_type" value="contact">
         <input type="hidden" name="utm_url" class="utm-url">
         <input type="hidden" name="utm_source" class="utm-source">
@@ -751,6 +748,7 @@
     </div>
     <div class="nl-form">
       <form method="POST" action="newsletter.php" id="nl-form-main">
+        <div class="form-inline-msg" id="msg-nl-main"></div>
         <div class="d-flex" style="margin-bottom:0.6rem;">
           <input type="email" name="email" placeholder="Enter your work email" required class="nl-input" style="margin-bottom:0;">
           <input type="hidden" name="source"       value="homepage-newsletter">
@@ -820,6 +818,108 @@
   document.querySelectorAll('.plan-select').forEach(btn => {
     btn.addEventListener('click', () => setPlan(btn.dataset.plan));
   });
+})();
+</script>
+
+<script>
+/* ── Inline AJAX form handler ──────────────────────────────────────────── */
+(function () {
+  const REFRESH = 'captcha-refresh.php';
+
+  function showMsg(msgEl, type, html) {
+    msgEl.className = 'form-inline-msg is-' + type;
+    msgEl.innerHTML = html;
+    msgEl.style.display = 'block';
+    msgEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  async function refreshCaptcha(form) {
+    try {
+      const data = await (await fetch(REFRESH)).json();
+      const strong = form.querySelector('.captcha-label strong');
+      const token  = form.querySelector('input[name="captcha_token"]');
+      const input  = form.querySelector('.captcha-input');
+      if (strong) strong.textContent = data.question;
+      if (token)  token.value = data.token;
+      if (input)  { input.value = ''; input.focus(); }
+    } catch {}
+  }
+
+  function wireForm(formEl, msgEl, opts) {
+    formEl.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      msgEl.style.display = 'none';
+
+      const btn = formEl.querySelector('[type="submit"]');
+      const orig = btn.innerHTML;
+      btn.disabled = true;
+      btn.innerHTML = 'Sending…';
+
+      try {
+        const res  = await fetch(formEl.action, {
+          method: 'POST',
+          body: new FormData(formEl),
+          headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+        const data = await res.json();
+
+        if (data.ok) {
+          if (opts.onSuccess) {
+            opts.onSuccess(formEl, msgEl, data);
+          } else {
+            showMsg(msgEl, 'success', opts.successMsg || 'Done!');
+            formEl.reset();
+            refreshCaptcha(formEl);
+          }
+        } else {
+          showMsg(msgEl, 'error', data.error || 'Something went wrong. Please try again.');
+          if ((data.error || '').toLowerCase().includes('anti-spam')) {
+            refreshCaptcha(formEl);
+          }
+        }
+      } catch {
+        showMsg(msgEl, 'error', 'Network error. Please check your connection and try again.');
+      }
+
+      btn.disabled = false;
+      btn.innerHTML = orig;
+    });
+  }
+
+  // ── Hero audit form ────────────────────────────────────────────────────
+  const fAudit = document.getElementById('form-audit');
+  const mAudit = document.getElementById('msg-audit');
+  if (fAudit && mAudit) {
+    wireForm(fAudit, mAudit, {
+      onSuccess(form, msg, data) {
+        window.location.href = 'success.php?submitted=1&name=' + encodeURIComponent(data.name || '');
+      }
+    });
+  }
+
+  // ── Contact / CTA form ─────────────────────────────────────────────────
+  const fContact = document.getElementById('form-contact');
+  const mContact = document.getElementById('msg-contact');
+  if (fContact && mContact) {
+    wireForm(fContact, mContact, {
+      onSuccess(form, msg, data) {
+        window.location.href = 'success.php?submitted=1&name=' + encodeURIComponent(data.name || '');
+      }
+    });
+  }
+
+  // ── Homepage newsletter ────────────────────────────────────────────────
+  const fNl = document.getElementById('nl-form-main');
+  const mNl = document.getElementById('msg-nl-main');
+  if (fNl && mNl) {
+    wireForm(fNl, mNl, {
+      onSuccess(form, msg) {
+        showMsg(msg, 'success', "You're in! Expect sharp growth insights every fortnight.");
+        form.reset();
+        refreshCaptcha(form);
+      }
+    });
+  }
 })();
 </script>
 </body>

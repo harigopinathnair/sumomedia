@@ -254,7 +254,8 @@ $_base    = $_proto . '://' . $_SERVER['HTTP_HOST'] . BASE_PATH . '/';
       <p>Deep-dive growth strategies delivered to your inbox every fortnight. No fluff. Just data.</p>
     </div>
     <div class="nl-form">
-      <form class="nl-form-post" method="POST" action="newsletter.php">
+      <form class="nl-form-post" id="form-nl-post" method="POST" action="newsletter.php">
+        <div class="form-inline-msg" id="msg-nl-post"></div>
         <div class="d-flex" style="margin-bottom:0.6rem;">
           <input type="email" name="email" placeholder="Enter your work email" required class="nl-input" style="margin-bottom:0;">
           <input type="hidden" name="source"       value="post-footer">
@@ -288,6 +289,64 @@ $_base    = $_proto . '://' . $_SERVER['HTTP_HOST'] . BASE_PATH . '/';
   document.querySelectorAll('[class*="nl-utm_campaign"]').forEach(el => el.value = sessionStorage.getItem('utm_campaign') || '');
   document.querySelectorAll('[class*="nl-utm_content"]').forEach(el  => el.value = sessionStorage.getItem('utm_content')  || '');
   document.querySelectorAll('[class*="nl-utm_term"]').forEach(el     => el.value = sessionStorage.getItem('utm_term')     || '');
+})();
+</script>
+
+<script>
+(function () {
+  const REFRESH = 'captcha-refresh.php';
+
+  function showMsg(el, type, html) {
+    el.className = 'form-inline-msg is-' + type;
+    el.innerHTML = html;
+    el.style.display = 'block';
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  async function refreshCaptcha(form) {
+    try {
+      const data = await (await fetch(REFRESH)).json();
+      const strong = form.querySelector('.captcha-label strong');
+      const token  = form.querySelector('input[name="captcha_token"]');
+      const input  = form.querySelector('.captcha-input');
+      if (strong) strong.textContent = data.question;
+      if (token)  token.value = data.token;
+      if (input)  { input.value = ''; input.focus(); }
+    } catch {}
+  }
+
+  const form = document.getElementById('form-nl-post');
+  const msg  = document.getElementById('msg-nl-post');
+  if (form && msg) {
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      msg.style.display = 'none';
+      const btn = form.querySelector('[type="submit"]');
+      const orig = btn.innerHTML;
+      btn.disabled = true; btn.innerHTML = 'Subscribing…';
+
+      try {
+        const res  = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'X-Requested-With': 'XMLHttpRequest' }
+        });
+        const data = await res.json();
+
+        if (data.ok) {
+          showMsg(msg, 'success', "You're in! Expect sharp growth insights every fortnight.");
+          form.reset();
+          refreshCaptcha(form);
+        } else {
+          showMsg(msg, 'error', data.error || 'Something went wrong. Please try again.');
+          if ((data.error || '').toLowerCase().includes('anti-spam')) refreshCaptcha(form);
+        }
+      } catch {
+        showMsg(msg, 'error', 'Network error. Please try again.');
+      }
+      btn.disabled = false; btn.innerHTML = orig;
+    });
+  }
 })();
 </script>
 </body>
