@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once 'auth.php';
 
 // ── Auto-migrate leads table ───────────────────────────────────────────────
@@ -207,6 +207,7 @@ function source_badge(string $s): string {
   .kanban-board { grid-template-columns: repeat(5, 260px); }
 }
 </style>
+<?= $custom_code_head ?? '' ?>
 </head>
 <body>
 

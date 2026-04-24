@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once 'auth.php';
 
 $flash = $_SESSION['flash'] ?? null;
@@ -27,6 +27,7 @@ function status_badge(string $s): string {
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<?= $custom_code_head ?? '' ?>
 </head>
 <body>
 

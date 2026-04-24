@@ -81,6 +81,7 @@ $sessions = $pdo->query("SELECT * FROM chat_sessions ORDER BY updated_at DESC")-
 .chat-input button { padding: 0.8rem 1.5rem; background: var(--primary, #1e3a8a); color: #fff; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; }
 .chat-input button:hover { opacity: 0.9; }
 </style>
+<?= $custom_code_head ?? '' ?>
 </head>
 <body>
 

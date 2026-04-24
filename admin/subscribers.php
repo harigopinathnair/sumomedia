@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once 'auth.php';
 
 // Auto-create table if missing
@@ -120,6 +120,7 @@ if ($filter === 'active') {
 .export-btn { display:inline-flex; align-items:center; gap:0.4rem; padding:0.65rem 1.2rem; background:#fff; border:1px solid var(--gray-border); border-radius:6px; font-size:0.88rem; font-weight:600; color:var(--text-dark); text-decoration:none; transition:all 0.15s; }
 .export-btn:hover { border-color:var(--navy); background:var(--navy); color:#fff; }
 </style>
+<?= $custom_code_head ?? '' ?>
 </head>
 <body>
 

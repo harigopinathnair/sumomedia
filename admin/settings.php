@@ -114,6 +114,7 @@ $custom_code_footer = get_setting($pdo, 'custom_code_footer', '');
 .author-preview .preview-bio { font-size: 0.88rem; color: var(--text-dark); line-height: 1.7; margin-top: 0.8rem; text-align: left; }
 @media (max-width: 900px) { .settings-grid { grid-template-columns: 1fr; } }
 </style>
+<?= $custom_code_head ?? '' ?>
 </head>
 <body>
 

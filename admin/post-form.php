@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once 'auth.php';
 
 // ── Auto-migrate: add SEO + featured_image columns if missing ──────────────
@@ -247,6 +247,7 @@ $featured_src = $post['featured_image'] ? ('../' . $post['featured_image']) : ($
 /* Upload progress indicator in toolbar */
 .ql-toolbar .ql-image svg { pointer-events: none; }
 </style>
+<?= $custom_code_head ?? '' ?>
 </head>
 <body>
 

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 
 if (!empty($_SESSION['admin_logged_in'])) {
@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<?= $custom_code_head ?? '' ?>
 </head>
 <body class="login-page">
 
