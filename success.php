@@ -1,4 +1,6 @@
 ﻿<?php
+ini_set('display_errors', '0');
+ob_start();
 // Allow GET access when redirected after AJAX submission
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (!empty($_GET['submitted'])) {
@@ -16,6 +18,7 @@ $is_ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
     && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
 
 function json_out_s(bool $ok, string $msg = '', string $name = ''): void {
+    ob_end_clean();
     header('Content-Type: application/json');
     echo json_encode(['ok' => $ok, 'error' => $msg, 'name' => $name]);
     exit;
@@ -122,6 +125,7 @@ try {
 if ($is_ajax) json_out_s(true, '', $name);
 
 } // end POST block
+ob_end_clean();
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,4 +1,6 @@
 <?php
+ini_set('display_errors', '0');
+ob_start();
 header('Content-Type: application/json');
 header('X-Content-Type-Options: nosniff');
 header('X-Frame-Options: DENY');
@@ -29,6 +31,7 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS chat_messages (
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
 
 function out(array $data): void {
+    ob_end_clean();
     echo json_encode($data);
     exit;
 }

@@ -1,4 +1,6 @@
 ﻿<?php
+ini_set('display_errors', '0');
+ob_start();
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     header('Location: index.php');
     exit;
@@ -8,6 +10,7 @@ $is_ajax = !empty($_SERVER['HTTP_X_REQUESTED_WITH'])
     && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) === 'xmlhttprequest';
 
 function nl_json(bool $ok, string $msg = ''): void {
+    ob_end_clean();
     header('Content-Type: application/json');
     echo json_encode(['ok' => $ok, 'error' => $msg]);
     exit;
