@@ -1,6 +1,14 @@
 ﻿<?php
 ini_set('display_errors', '0');
 ob_start();
+register_shutdown_function(function() {
+    $e = error_get_last();
+    if ($e && ($e['type'] & (E_ERROR|E_PARSE|E_CORE_ERROR|E_COMPILE_ERROR|E_USER_ERROR))) {
+        while (ob_get_level()) ob_end_clean();
+        if (!headers_sent()) header('Content-Type: application/json');
+        echo json_encode(['ok' => false, 'error' => '[PHP] ' . $e['message'] . ' (' . basename($e['file']) . ':' . $e['line'] . ')']);
+    }
+});
 // Allow GET access when redirected after AJAX submission
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     if (!empty($_GET['submitted'])) {

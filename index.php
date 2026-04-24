@@ -847,7 +847,16 @@
           body: new FormData(formEl),
           headers: { 'X-Requested-With': 'XMLHttpRequest' }
         });
-        const data = await res.json();
+        const text = await res.text();
+        let data;
+        try {
+          data = JSON.parse(text);
+        } catch (e) {
+          console.error('[Form] HTTP ' + res.status + ' — raw response:', text);
+          showMsg(msgEl, 'error', 'Server error (HTTP ' + res.status + '). Open browser console (F12) to see details.');
+          btn.disabled = false; btn.innerHTML = orig;
+          return;
+        }
 
         if (data.ok) {
           if (opts.onSuccess) {
@@ -859,7 +868,8 @@
         } else {
           showMsg(msgEl, 'error', data.error || 'Something went wrong. Please try again.');
         }
-      } catch {
+      } catch (e) {
+        console.error('[Form] Fetch failed:', e);
         showMsg(msgEl, 'error', 'Network error. Please check your connection and try again.');
       }
 
