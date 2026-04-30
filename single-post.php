@@ -48,7 +48,7 @@ if (!$post) {
 <base href="<?= htmlspecialchars($_proto2 . '://' . $_SERVER['HTTP_HOST'] . BASE_PATH . '/') ?>">
 <title>Post Not Found | SumoMedia.in</title>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-2040.css?v=3">
+<link rel="stylesheet" href="style-2040.css?v=4">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -108,7 +108,7 @@ $_base    = $_proto . '://' . $_SERVER['HTTP_HOST'] . BASE_PATH . '/';
 <meta name="description" content="<?= htmlspecialchars($post['excerpt']) ?>">
 <link rel="canonical" href="https://sumomedia.in/blog/<?= htmlspecialchars($post['slug']) ?>">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-2040.css?v=3">
+<link rel="stylesheet" href="style-2040.css?v=4">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
