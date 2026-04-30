@@ -7,7 +7,7 @@ $nav_prefix ??= 'index.php';
 <!-- NAV -->
 <nav class="main-nav" id="mainNav">
   <div class="container nav-content">
-    <a href="index.php" class="logo-img"><img src="uploads/hari-dark-logo.png" alt="SumoMedia" width="200" style="height:auto;"></a>
+    <a href="index.php" class="logo-img"><img src="<?= ($nav_prefix ? '' : '') ?>logo.png" alt="SumoMedia" width="200" style="height:auto;"></a>
     <div class="nav-links">
       <a href="<?= $nav_prefix ?>#services">Services</a>
       <a href="<?= $nav_prefix ?>#about">About</a>

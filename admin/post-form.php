@@ -255,7 +255,7 @@ $featured_src = $post['featured_image'] ? ('../' . $post['featured_image']) : ($
 
   <!-- Sidebar -->
   <aside class="sidebar">
-    <div class="sidebar-logo">HG<span>Admin</span></div>
+    <div class="sidebar-logo"><img src="../logo.png" alt="SumoMedia" style="max-width: 150px; height: auto;"></div>
     <nav class="sidebar-nav">
       <a href="posts.php" class="nav-item">Posts</a>
       <a href="post-form.php" class="nav-item <?= $mode === 'new' ? 'active' : '' ?>">New Post</a>

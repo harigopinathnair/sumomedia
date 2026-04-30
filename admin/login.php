@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body class="login-page">
 
 <div class="login-box">
-  <div class="login-logo">HariGopinath<span>.com</span></div>
+  <div class="login-logo"><img src="../logo.png" alt="SumoMedia" style="max-width: 180px; height: auto;"></div>
   <h2>Admin Panel</h2>
   <p class="login-sub">Sign in to manage posts</p>
 
