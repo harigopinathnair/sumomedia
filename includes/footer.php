@@ -3,7 +3,7 @@
   <div class="container">
     <div class="footer-top grid-4">
       <div class="foot-col span-2">
-        <a href="index.php" class="logo-img"><img src="logo.png" alt="SumoMedia" width="130" style="height:auto;"></a>
+        <a href="index.php" class="logo-img"><img src="dark_logo.png" alt="SumoMedia" width="130" style="height:auto;"></a>
         <p class="mt-3 opacity-70 max-w-400">A performance-first growth partner for ambitious brands ready to scale through revenue engineering and data attribution.</p>
       </div>
       <div class="foot-col">
