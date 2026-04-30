@@ -80,9 +80,10 @@
           <select name="budget" required>
             <option value="" disabled selected>Monthly Budget</option>
             <option>Under ₹ 1,00,000</option>
-            <option>₹ 1,00,000 - ₹ 4,80,000</option>
-            <option>₹ 4,80,000 - ₹ 9,50,000</option>
-            <option>₹ 9,50,000+</option>
+            <option>₹ 1,00,000 - ₹ 10,00,000</option>
+            <option>₹ 10,00,000 - ₹ 50,00,000</option>
+            <option>₹ 50,00,000 - ₹ 1,00,00,000</option>
+            <option>₹ 1,00,00,000+</option>
           </select>
         </div>
         <input type="url" name="website" placeholder="Your Website URL (e.g. https://sumomedia.in)">
