@@ -14,10 +14,10 @@
         <a href="index.php#services">Attribution</a>
       </div>
       <div class="foot-col">
-        <h4>Company</h4>
-        <a href="index.php#about">The Strategist</a>
-        <a href="index.php#contact">Contact</a>
-        <a href="blog.php">Blog</a>
+        <h4>Legal</h4>
+        <a href="terms.php">Terms & Conditions</a>
+        <a href="privacy.php">Privacy Policy</a>
+        <a href="disclaimer.php">Disclaimer</a>
       </div>
     </div>
     <div class="footer-mid mt-5 pt-4 border-top">
@@ -30,7 +30,8 @@
       </div>
     </div>
     <div class="footer-bottom mt-5 text-center opacity-50">
-      &copy; <?= date('Y') ?> SumoMedia.in &mdash; Rankings + Results = Revenue.
+      &copy; <?= date('Y') ?> SumoMedia.in &mdash; A division of Trisora Group.<br>
+      Rankings + Results = Revenue.
     </div>
   </div>
 </footer>
