@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/nqatsxqe/harigopinath.com
+    - export DEPLOYPATH=/home/nqatsxqe/sumomedia.in
     - /bin/cp -R . $DEPLOYPATH
