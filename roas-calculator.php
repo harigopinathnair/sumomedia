@@ -388,13 +388,13 @@
               <option value="$">USD ($)</option>
               <option value="€">EUR (€)</option>
               <option value="£">GBP (£)</option>
-              <option value="₹">INR (₹)</option>
+              <option value="₹" selected>INR (₹)</option>
               <option value="A$">AUD (A$)</option>
               <option value="C$">CAD (C$)</option>
             </select>
           </div>
           <div class="field-group">
-            <label for="total-revenue">Total Revenue (<span class="currency-symbol">$</span>)</label>
+            <label for="total-revenue">Total Revenue (<span class="currency-symbol">₹</span>)</label>
             <span class="hint">All revenue, not just from ads</span>
             <input type="number" id="total-revenue" class="calc-input" placeholder="e.g. 150000" min="0" step="1">
           </div>
@@ -418,8 +418,8 @@
           <thead>
             <tr>
               <th style="width:28%">Channel</th>
-              <th style="width:28%">Ad Spend (<span class="currency-symbol">$</span>)</th>
-              <th style="width:28%">Channel Revenue (<span class="currency-symbol">$</span>)</th>
+              <th style="width:28%">Ad Spend (<span class="currency-symbol">₹</span>)</th>
+              <th style="width:28%">Channel Revenue (<span class="currency-symbol">₹</span>)</th>
               <th class="th-result" style="width:12%">ROAS</th>
               <th style="width:4%"></th>
             </tr>

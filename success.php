@@ -300,7 +300,6 @@ ob_end_clean();
 
     <div class="success-actions">
       <a href="index.php" class="btn btn-primary">Back to Homepage</a>
-      <a href="blog.php" class="btn btn-outline">Read the Blog</a>
     </div>
 
   </div>

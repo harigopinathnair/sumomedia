@@ -56,7 +56,7 @@
       <h1 style="margin-top: 0;">RESULTS.<br>NOT<br>REPORTS.</h1>
       <p class="lead">I turn ad spend and search intent into measurable revenue. No vanity metrics. No fluff. Just campaigns engineered to grow your bottom line.</p>
       <div class="hero-stats">
-        <div class="stat"><span class="stat-num">$30M+</span><span class="stat-label">Revenue Driven</span></div>
+        <div class="stat"><span class="stat-num">₹ 285 Cr+</span><span class="stat-label">Revenue Driven</span></div>
         <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Brands Scaled</span></div>
         <div class="stat"><span class="stat-num">5×</span><span class="stat-label">Avg. ROAS</span></div>
       </div>
@@ -79,10 +79,10 @@
           <input type="tel" name="phone" placeholder="Phone / WhatsApp">
           <select name="budget" required>
             <option value="" disabled selected>Monthly Budget</option>
-            <option>Under $1,000</option>
-            <option>$1,000 - $5,000</option>
-            <option>$5,000 - $10,000</option>
-            <option>$10,000+</option>
+            <option>Under ₹ 1,00,000</option>
+            <option>₹ 1,00,000 - ₹ 4,80,000</option>
+            <option>₹ 4,80,000 - ₹ 9,50,000</option>
+            <option>₹ 9,50,000+</option>
           </select>
         </div>
         <input type="url" name="website" placeholder="Your Website URL (e.g. https://sumomedia.in)">
@@ -467,7 +467,7 @@
         <span class="as-label">Organic Clicks</span>
       </div>
       <div class="as-stat">
-        <span class="as-num">$16M+</span>
+        <span class="as-num">₹ 152 Cr+</span>
         <span class="as-label">Traffic Value</span>
       </div>
       <div class="as-stat">

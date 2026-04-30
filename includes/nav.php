@@ -12,7 +12,6 @@ $nav_prefix ??= 'index.php';
       <a href="<?= $nav_prefix ?>#services">Services</a>
       <a href="<?= $nav_prefix ?>#about">About</a>
       <a href="<?= $nav_prefix ?>#pricing">Packages</a>
-      <a href="blog.php" <?= basename($_SERVER['PHP_SELF']) === 'blog.php' ? 'class="nav-link-strong" style="color:var(--orange);"' : '' ?>>Blog</a>
       <a href="tools.php" <?= basename($_SERVER['PHP_SELF']) === 'tools.php' ? 'style="color:var(--orange);"' : '' ?>>Tools</a>
     </div>
     <div class="nav-actions">
@@ -29,7 +28,6 @@ $nav_prefix ??= 'index.php';
     <a href="<?= $nav_prefix ?>#services" class="nav-mobile-link">Services</a>
     <a href="<?= $nav_prefix ?>#about"    class="nav-mobile-link">About</a>
     <a href="<?= $nav_prefix ?>#pricing"  class="nav-mobile-link">Packages</a>
-    <a href="blog.php"  class="nav-mobile-link">Blog</a>
     <a href="tools.php" class="nav-mobile-link">Tools</a>
     <div class="nav-mobile-actions">
       <a href="<?= $nav_prefix ?>#contact" class="nav-link-strong">Call Now</a>
