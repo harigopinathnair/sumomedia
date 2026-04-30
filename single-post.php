@@ -20,7 +20,7 @@ try {
     $author_title    = sp_get_setting($pdo, 'author_title',    'Growth Strategist & SEO Engineer');
     $author_bio      = sp_get_setting($pdo, 'author_bio',      '');
     $author_photo    = sp_get_setting($pdo, 'author_photo',    '');
-    $author_email    = sp_get_setting($pdo, 'author_email',    'contact@harigopinath.com');
+    $author_email    = sp_get_setting($pdo, 'author_email',    'contact@sumomedia.in');
     $author_linkedin = sp_get_setting($pdo, 'author_linkedin', '');
     $author_telegram = sp_get_setting($pdo, 'author_telegram', '');
 } catch (Exception $e) { /* settings table may not exist yet */ }
@@ -46,9 +46,9 @@ if (!$post) {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php $_proto2 = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http'; ?>
 <base href="<?= htmlspecialchars($_proto2 . '://' . $_SERVER['HTTP_HOST'] . BASE_PATH . '/') ?>">
-<title>Post Not Found | HariGopinath.com</title>
+<title>Post Not Found | SumoMedia.in</title>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-2040.css">
+<link rel="stylesheet" href="style-2040.css?v=3">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -104,11 +104,11 @@ $_proto   = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https'
 $_base    = $_proto . '://' . $_SERVER['HTTP_HOST'] . BASE_PATH . '/';
 ?>
 <base href="<?= htmlspecialchars($_base) ?>">
-<title><?= htmlspecialchars($post['title']) ?> | HariGopinath.com</title>
+<title><?= htmlspecialchars($post['title']) ?> | SumoMedia.in</title>
 <meta name="description" content="<?= htmlspecialchars($post['excerpt']) ?>">
-<link rel="canonical" href="https://harigopinath.com/blog/<?= htmlspecialchars($post['slug']) ?>">
+<link rel="canonical" href="https://sumomedia.in/blog/<?= htmlspecialchars($post['slug']) ?>">
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-2040.css">
+<link rel="stylesheet" href="style-2040.css?v=3">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">

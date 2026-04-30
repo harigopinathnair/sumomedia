@@ -8,7 +8,7 @@ $category = "Content Strategy";
 $excerpt  = "Most keyword research ends too early. Keyword clustering — grouping semantically related keywords and assigning each group to a single page — eliminates cannibalisation, concentrates ranking potential, and gives you a precise map of exactly how many pages your site needs and what each one should cover.";
 $image_url = "";
 
-$meta_title       = "Keyword Clustering: How to Group Keywords for Maximum Rankings | HariGopinath.com";
+$meta_title       = "Keyword Clustering: How to Group Keywords for Maximum Rankings | SumoMedia.in";
 $meta_description = "Learn keyword clustering methodology — how to group semantically related keywords by SERP overlap and intent, fix keyword cannibalisation, and map every keyword to the right page.";
 $meta_keywords    = "keyword clustering strategy, semantic keyword grouping, keyword mapping, SERP overlap clustering, keyword cannibalization fix, search intent, topic cluster SEO, intent-based clusters";
 $schema_type      = "BlogPosting";
@@ -189,7 +189,7 @@ $content = <<<'HTML'
   </div>
   <div style="background:rgba(255,101,0,0.08); border:1px solid rgba(255,101,0,0.2); border-radius:12px; padding:1.8rem;">
     <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--orange); margin-bottom:0.75rem;">Book a strategy session</div>
-    <p style="font-size:0.92rem; margin:0; color:rgba(255,255,255,0.7);">Get a free keyword clustering audit at <a href="/" style="color:var(--orange);">harigopinath.com</a> — identify your cannibalisation issues and consolidation opportunities.</p>
+    <p style="font-size:0.92rem; margin:0; color:rgba(255,255,255,0.7);">Get a free keyword clustering audit at <a href="/" style="color:var(--orange);">sumomedia.in</a> — identify your cannibalisation issues and consolidation opportunities.</p>
   </div>
   <div style="background:rgba(255,101,0,0.08); border:1px solid rgba(255,101,0,0.2); border-radius:12px; padding:1.8rem;">
     <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--orange); margin-bottom:0.75rem;">Read next</div>

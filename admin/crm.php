@@ -11,6 +11,7 @@ $pdo->exec("CREATE TABLE IF NOT EXISTS leads (
     budget     VARCHAR(100)   NOT NULL DEFAULT '',
     goal       TEXT,
     challenge  VARCHAR(255)   NOT NULL DEFAULT '',
+    website    VARCHAR(500)   NOT NULL DEFAULT '',
     status     VARCHAR(30)    NOT NULL DEFAULT 'new',
     value      DECIMAL(12,2)  NOT NULL DEFAULT 0,
     comment    TEXT,
@@ -390,6 +391,14 @@ function source_badge(string $s): string {
                 <div class="d-field">
                   <label>Pricing Plan Selected</label>
                   <div style="font-size:0.82rem; color:#6d28d9; padding:0.3rem 0; font-weight:600;"><?= htmlspecialchars($lead['pricing_plan']) ?></div>
+                </div>
+                <?php endif; ?>
+                <?php if (!empty($lead['website'])): ?>
+                <div class="d-field">
+                  <label>Website</label>
+                  <div style="font-size:0.82rem; padding:0.3rem 0;">
+                    <a href="<?= htmlspecialchars($lead['website']) ?>" target="_blank" rel="noopener" style="color:var(--orange);word-break:break-all;"><?= htmlspecialchars($lead['website']) ?></a>
+                  </div>
                 </div>
                 <?php endif; ?>
                 <?php if (!empty($lead['utm_source']) || !empty($lead['utm_url'])): ?>

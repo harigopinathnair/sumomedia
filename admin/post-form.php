@@ -350,7 +350,7 @@ $featured_src = $post['featured_image'] ? ('../' . $post['featured_image']) : ($
 
               <div class="field">
                 <label for="canonical_url">Canonical URL <span class="field-hint">(leave blank = self-canonical)</span></label>
-                <input type="url" id="canonical_url" name="canonical_url" value="<?= htmlspecialchars($post['canonical_url']) ?>" placeholder="https://harigopinath.com/...">
+                <input type="url" id="canonical_url" name="canonical_url" value="<?= htmlspecialchars($post['canonical_url']) ?>" placeholder="https://sumomedia.in/...">
               </div>
 
               <div class="field">

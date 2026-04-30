@@ -4,9 +4,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HariGopinath.com | Performance Digital Marketing & SEO</title>
+<title>SumoMedia.in | Performance Digital Marketing & SEO</title>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style-2040.css">
+<link rel="stylesheet" href="style-2040.css?v=3">
 <link rel="icon" type="image/x-icon" href="/favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -85,6 +85,7 @@
             <option>$10,000+</option>
           </select>
         </div>
+        <input type="url" name="website" placeholder="Your Website URL (e.g. https://sumomedia.in)">
         <input type="text" name="goal" placeholder="Primary Goal">
         <?= captcha_html() ?>
         <button type="submit" class="btn btn-primary btn-block">Send My Free Audit &rarr;</button>
@@ -438,8 +439,8 @@
   <div class="about-content-col">
     <div class="about-header">
       <span class="about-eyebrow">Who am I?</span>
-      <h2 class="about-name">Hello, I'm Hari.</h2>
-      <p class="about-lead">Artist, writer, marketer, and a committed SEO strategist with over a decade in the craft.</p>
+      <h2 class="about-name">Hari Gopinath</h2>
+      <p class="about-lead">Director of Marketing at SumoMedia. Artist, writer, and a committed SEO strategist with over a decade in the craft.</p>
     </div>
 
     <div class="about-body">
@@ -512,7 +513,7 @@
 
     <div class="why-header">
       <div>
-        <span class="why-eyebrow">Why Hari Gopinath</span>
+        <span class="why-eyebrow">Why SumoMedia</span>
         <h2 class="why-headline">Not your typical<br>SEO agency.</h2>
       </div>
       <p class="why-subhead">Four things that make every engagement different from day one.</p>
@@ -729,7 +730,9 @@
           </select>
           <input type="text" name="goal" placeholder="Tell me about your 90-day revenue goal" style="margin-bottom: 0;">
         </div>
-        
+
+        <input type="url" name="website" placeholder="Your Website URL (e.g. https://sumomedia.in)">
+
         <?= captcha_html() ?>
         <div class="text-center" style="margin-top: 0.5rem;">
           <button type="submit" class="btn btn-primary" style="padding: 1.25rem 4rem; font-size: 1.1rem; width: auto;">Get My Free Growth Roadmap</button>

@@ -14,7 +14,11 @@ function send_lead_notification(array $lead): void {
     $budget    = $lead['budget']    ?? '—';
     $goal      = $lead['goal']      ?? '—';
     $challenge = $lead['challenge'] ?? '—';
-    $plan      = $lead['pricing_plan'] ?? '—';
+    $website      = $lead['website']   ?? '';
+    $plan         = $lead['pricing_plan'] ?? '—';
+    $website_cell = $website
+        ? '<a href="' . htmlspecialchars($website) . '" style="color:#FF7A59;">' . htmlspecialchars($website) . '</a>'
+        : '—';
 
     $source_label = $source === 'audit' ? 'Free Audit Form' : 'Contact Form';
 
@@ -25,13 +29,14 @@ function send_lead_notification(array $lead): void {
 <body style="font-family:Inter,Arial,sans-serif;background:#f6f9fc;margin:0;padding:0;">
 <div style="max-width:560px;margin:40px auto;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #cbd6e2;">
   <div style="background:#2d3e50;padding:28px 32px;">
-    <p style="color:#fff;font-size:1.1rem;font-weight:700;margin:0;">🔔 New Lead — HariGopinath.com</p>
+    <p style="color:#fff;font-size:1.1rem;font-weight:700;margin:0;">🔔 New Lead — SumoMedia.in</p>
   </div>
   <div style="padding:28px 32px;">
     <table width="100%" cellpadding="0" cellspacing="0" style="font-size:0.92rem;color:#2d3e50;">
       <tr><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-weight:700;width:130px;">Name</td><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;">{$name}</td></tr>
       <tr><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-weight:700;">Email</td><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;"><a href="mailto:{$email}" style="color:#FF7A59;">{$email}</a></td></tr>
       <tr><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-weight:700;">Phone</td><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;">{$phone}</td></tr>
+      <tr><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-weight:700;">Website</td><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;">{$website_cell}</td></tr>
       <tr><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-weight:700;">Source</td><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;">{$source_label}</td></tr>
       <tr><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-weight:700;">Plan</td><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;">{$plan}</td></tr>
       <tr><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;font-weight:700;">Budget</td><td style="padding:8px 0;border-bottom:1px solid #f0f0f0;">{$budget}</td></tr>
@@ -39,14 +44,14 @@ function send_lead_notification(array $lead): void {
       <tr><td style="padding:8px 0;font-weight:700;vertical-align:top;">Goal</td><td style="padding:8px 0;">{$goal}</td></tr>
     </table>
     <div style="margin-top:28px;">
-      <a href="https://harigopinath.com/admin/crm.php"
+      <a href="https://sumomedia.in/admin/crm.php"
          style="display:inline-block;padding:12px 28px;background:#FF7A59;color:#fff;border-radius:6px;font-weight:700;text-decoration:none;font-size:0.95rem;">
         View in CRM &rarr;
       </a>
     </div>
   </div>
   <div style="background:#f6f9fc;padding:16px 32px;font-size:0.78rem;color:#7c98b6;border-top:1px solid #cbd6e2;">
-    HariGopinath.com &mdash; Rankings + Results = Revenue.
+    SumoMedia.in &mdash; Rankings + Results = Revenue.
   </div>
 </div>
 </body>
@@ -64,7 +69,7 @@ HTML;
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port       = SMTP_PORT;
 
-        $mail->setFrom(SMTP_FROM, defined('SMTP_FROM_NAME') ? SMTP_FROM_NAME : 'HariGopinath.com');
+        $mail->setFrom(SMTP_FROM, defined('SMTP_FROM_NAME') ? SMTP_FROM_NAME : 'SumoMedia.in');
         $mail->addAddress(NOTIFY_EMAIL, 'Hari Gopinath');
         $mail->addReplyTo($email, $name);
 

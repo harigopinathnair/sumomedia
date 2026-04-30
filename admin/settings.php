@@ -86,7 +86,7 @@ $author_name     = get_setting($pdo, 'author_name',     'Hari Gopinath');
 $author_title    = get_setting($pdo, 'author_title',    'Growth Strategist & SEO Engineer');
 $author_bio      = get_setting($pdo, 'author_bio',      '');
 $author_photo    = get_setting($pdo, 'author_photo',    '');
-$author_email    = get_setting($pdo, 'author_email',    'contact@harigopinath.com');
+$author_email    = get_setting($pdo, 'author_email',    'contact@sumomedia.in');
 $author_linkedin = get_setting($pdo, 'author_linkedin', '');
 $author_telegram = get_setting($pdo, 'author_telegram', '');
 

@@ -3,7 +3,7 @@
   <div class="container">
     <div class="footer-top grid-4">
       <div class="foot-col span-2">
-        <a href="index.php" class="logo-img"><img src="uploads/hari-white-logo.png" alt="Hari Gopinath" width="130" style="height:auto;"></a>
+        <a href="index.php" class="logo-img"><img src="uploads/hari-white-logo.png" alt="SumoMedia" width="130" style="height:auto;"></a>
         <p class="mt-3 opacity-70 max-w-400">A performance-first growth partner for ambitious brands ready to scale through revenue engineering and data attribution.</p>
       </div>
       <div class="foot-col">
@@ -23,14 +23,14 @@
     <div class="footer-mid mt-5 pt-4 border-top">
       <div class="connect">
         <span>Connect</span>
-        <a href="mailto:connect@harigopinath.com">connect@harigopinath.com</a>
+        <a href="mailto:connect@sumomedia.in">connect@sumomedia.in</a>
       </div>
       <div class="locations text-right">
         Ahmedabad · Kochi · Dubai · Chicago
       </div>
     </div>
     <div class="footer-bottom mt-5 text-center opacity-50">
-      &copy; <?= date('Y') ?> HariGopinath.com &mdash; Rankings + Results = Revenue.
+      &copy; <?= date('Y') ?> SumoMedia.in &mdash; Rankings + Results = Revenue.
     </div>
   </div>
 </footer>

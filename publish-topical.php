@@ -8,7 +8,7 @@ $category = "Content Strategy";
 $excerpt  = "Google no longer rewards pages — it rewards publishers that demonstrate deep, consistent expertise across an entire subject area. A topical authority map is the blueprint for doing exactly that. This guide shows you exactly how to build one in five steps.";
 $image_url = "";
 
-$meta_title       = "How to Build a Topical Authority Map for Your Website | HariGopinath.com";
+$meta_title       = "How to Build a Topical Authority Map for Your Website | SumoMedia.in";
 $meta_description = "Learn how to build a topical authority map using the hub-and-spoke model, keyword universe mapping, and intent alignment — the strategic foundation for lasting organic rankings.";
 $meta_keywords    = "topical authority SEO, topical authority map, hub and spoke model, topic cluster, pillar content, semantic search optimisation, content depth, niche authority SEO, content gap analysis";
 $schema_type      = "BlogPosting";
@@ -144,7 +144,7 @@ $content = <<<'HTML'
   </div>
   <div style="background:rgba(255,101,0,0.08); border:1px solid rgba(255,101,0,0.2); border-radius:12px; padding:1.8rem;">
     <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--orange); margin-bottom:0.75rem;">Get a strategy audit</div>
-    <p style="font-size:0.92rem; margin:0; color:rgba(255,255,255,0.7);">Book a free content strategy consultation at <a href="/" style="color:var(--orange);">harigopinath.com</a> — identify your biggest topical gaps and quick wins.</p>
+    <p style="font-size:0.92rem; margin:0; color:rgba(255,255,255,0.7);">Book a free content strategy consultation at <a href="/" style="color:var(--orange);">sumomedia.in</a> — identify your biggest topical gaps and quick wins.</p>
   </div>
   <div style="background:rgba(255,101,0,0.08); border:1px solid rgba(255,101,0,0.2); border-radius:12px; padding:1.8rem;">
     <div style="font-size:0.72rem; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--orange); margin-bottom:0.75rem;">Read next</div>
