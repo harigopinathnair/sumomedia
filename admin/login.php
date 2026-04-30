@@ -2,7 +2,7 @@
 session_start();
 
 if (!empty($_SESSION['admin_logged_in'])) {
-    header('Location: posts.php');
+    header('Location: dashboard.php');
     exit;
 }
 
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_regenerate_id(true);
             $_SESSION['admin_logged_in'] = true;
             $_SESSION['admin_username']  = $user['username'];
-            header('Location: posts.php');
+            header('Location: dashboard.php');
             exit;
         } else {
             $error = 'Invalid username or password.';

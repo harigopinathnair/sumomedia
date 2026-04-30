@@ -218,9 +218,11 @@ function source_badge(string $s): string {
   <aside class="sidebar">
     <div class="sidebar-logo"><img src="../logo.png" alt="SumoMedia" style="max-width: 150px; height: auto;"></div>
     <nav class="sidebar-nav">
+      <a href="dashboard.php" class="nav-item">Dashboard</a>
       <a href="posts.php" class="nav-item">Posts</a>
       <a href="post-form.php" class="nav-item">New Post</a>
       <a href="crm.php" class="nav-item active">CRM</a>
+      <a href="chats.php" class="nav-item">Live Chats</a>
       <a href="subscribers.php" class="nav-item">Subscribers</a>
       <a href="settings.php" class="nav-item">Settings</a>
       <a href="../index.php" class="nav-item" target="_blank">View Site</a>

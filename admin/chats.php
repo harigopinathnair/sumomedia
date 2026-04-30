@@ -89,7 +89,8 @@ $sessions = $pdo->query("SELECT * FROM chat_sessions ORDER BY updated_at DESC")-
   <div class="h-left">
     <div class="logo"><img src="../logo.png" alt="SumoMedia" style="max-width: 150px; height: auto;"></div>
     <nav class="h-nav">
-      <a href="posts.php">Articles</a>
+      <a href="dashboard.php">Dashboard</a>
+      <a href="posts.php">Posts</a>
       <a href="crm.php">CRM</a>
       <a href="chats.php" class="active">Live Chat</a>
       <a href="settings.php">Settings</a>

@@ -54,7 +54,7 @@
         <div class="tag" style="background: var(--orange); border-color: var(--orange); color: #fff; margin-bottom: 0;">2x Published Author &amp; Mentor</div>
       </div>
       <h1 style="margin-top: 0;">RESULTS.<br>NOT<br>REPORTS.</h1>
-      <p class="lead">I turn ad spend and search intent into measurable revenue. No vanity metrics. No fluff. Just campaigns engineered to grow your bottom line.</p>
+      <p class="lead">We turn ad spend and search intent into measurable revenue. No vanity metrics. No fluff. Just campaigns engineered to grow your bottom line.</p>
       <div class="hero-stats">
         <div class="stat"><span class="stat-num">₹ 285 Cr+</span><span class="stat-label">Revenue Driven</span></div>
         <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Brands Scaled</span></div>
@@ -63,7 +63,7 @@
     </div>
     <div class="hero-form-box">
       <h3>Get Your Free Growth Audit</h3>
-      <p>I'll analyse your website and share a roadmap for growth!</p>
+      <p>We'll analyse your website and share a roadmap for growth!</p>
       <form class="audit-form utm-form" id="form-audit" method="POST" action="success.php">
         <div class="form-inline-msg" id="msg-audit"></div>
         <input type="hidden" name="form_type" value="audit">
@@ -122,7 +122,7 @@
 <!-- LOGOS -->
 <section class="friends-logos pt-5 pb-5 section-gray" style="overflow: hidden;">
   <div class="container text-center">
-    <p class="tag mb-4">A few Brands I worked with</p>
+    <p class="tag mb-4">Brands we've worked with</p>
   </div>
   <div class="brands-ticker mt-4">
     <div class="brands-ticker-track">
@@ -204,9 +204,9 @@
 <!-- WHAT WE DO -->
 <section class="what-we-do section-gray">
   <div class="container text-center">
-    <div class="tag text-orange">What I do</div>
-    <h2 style="font-size:2.8rem; margin-bottom: 1.5rem;">I help ambitious brands grow their SEO traffic</h2>
-    <p class="max-w-700 mx-auto" style="font-size:1.1rem; margin-bottom:15px; padding-bottom:15px;">Most brands pour budget into ads, sponsorships, email, and social, yet very few build the one channel that compounds over time and costs nothing to maintain. In my experience, the brands that consistently produce high-quality, SEO-optimized content are the ones with the most resilient traffic, no matter what else they're spending on.</p>
+    <div class="tag text-orange">What we do</div>
+    <h2 style="font-size:2.8rem; margin-bottom: 1.5rem;">SumoMedia helps ambitious brands grow their organic traffic</h2>
+    <p class="max-w-700 mx-auto" style="font-size:1.1rem; margin-bottom:15px; padding-bottom:15px;">Most brands pour budget into ads, sponsorships, email, and social, yet very few build the one channel that compounds over time and costs nothing to maintain. In our experience, the brands that consistently produce high-quality, SEO-optimized content are the ones with the most resilient traffic, no matter what else they're spending on.</p>
     
     <!-- GSC Stats Cards -->
     <div class="gsc-stats mt-5">
@@ -483,25 +483,25 @@
 <!-- WHAT WE OFFER -->
 <section class="offer-section section-gray" id="services">
   <div class="container text-center">
-    <div class="tag">What I offer</div>
-    <h2 style="font-size: 2.8rem; margin-bottom: 2rem;">I'll create a personalized content<br>operation for your brand</h2>
+    <div class="tag">What we offer</div>
+    <h2 style="font-size: 2.8rem; margin-bottom: 2rem;">We create a personalized content<br>operation for your brand</h2>
     
     <div class="grid-4 mt-5 text-left">
       <div class="feature-card">
         <h4>A custom content and keyword strategy</h4>
-        <p>I give you a monthly content calendar tailored to your brand and target audience.</p>
+        <p>We provide a monthly content calendar tailored to your brand and target audience.</p>
       </div>
       <div class="feature-card">
         <h4>Backlink building</h4>
-        <p>I want you to be an authority in your industry. That means building up your domain authority through mentions on other publications.</p>
+        <p>We ensure you become an authority in your industry. That means building up your domain authority through mentions on other publications.</p>
       </div>
       <div class="feature-card">
         <h4>Content production</h4>
-        <p>I create every piece of content for you so you can focus on growing other parts of your business.</p>
+        <p>We handle every piece of content production so you can focus on growing other parts of your business.</p>
       </div>
       <div class="feature-card">
         <h4>Originally researched</h4>
-        <p>All of my content is originally researched and goes through a grammar and plagiarism check before it is handed to you.</p>
+        <p>All of our content is originally researched and goes through a grammar and plagiarism check before it is handed to you.</p>
       </div>
     </div>
   </div>
@@ -528,7 +528,7 @@
         </div>
         <div class="why-body">
           <h3>No contracts</h3>
-          <p>Say goodbye to monthly retainers. If you don't like my approach, you can easily part ways, no lock-ins, no penalties, no friction.</p>
+          <p>Say goodbye to monthly retainers. If you don't like our approach, you can easily part ways, no lock-ins, no penalties, no friction.</p>
         </div>
         <span class="why-tag-right">Flexibility</span>
       </div>
@@ -552,7 +552,7 @@
         </div>
         <div class="why-body">
           <h3>In good hands</h3>
-          <p>Your account is handled directly by me, not outsourced, not delegated. I've taken multiple projects from zero to hundreds of thousands of monthly visitors.</p>
+          <p>Your strategy is led directly by our Director of Marketing, Hari Gopinath—not outsourced, not delegated. We've taken multiple projects from zero to hundreds of thousands of monthly visitors.</p>
         </div>
         <span class="why-tag-right">Direct Access</span>
       </div>
@@ -564,7 +564,7 @@
         </div>
         <div class="why-body">
           <h3>A focus on SEO</h3>
-          <p>Every piece is SEO-optimised and written for humans and search engines alike. 1,000+ posts published, I know exactly what it takes to rank on Google and get cited by AI.</p>
+          <p>Every piece is SEO-optimised and written for humans and search engines alike. With 1,000+ posts published, we know exactly what it takes to rank on Google and get cited by AI.</p>
         </div>
         <span class="why-tag-right">Performance</span>
       </div>
@@ -653,7 +653,7 @@
 <section class="free-post-cta text-center" style="padding: 6rem 0;">
   <div class="container border-top pt-5">
     <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem;">Not sure where to start?<br>Book a free SEO strategy call.</h2>
-    <p class="lead mt-3 mx-auto max-w-700" style="font-size: 1.15rem; color: var(--text-light);">In 30 minutes, I’ll audit your current organic presence and hand you a clear, actionable roadmap, no fluff, no pitch, just strategy.</p>
+    <p class="lead mt-3 mx-auto max-w-700" style="font-size: 1.15rem; color: var(--text-light);">In 30 minutes, we’ll audit your current organic presence and hand you a clear, actionable roadmap—no fluff, no pitch, just strategy.</p>
     <a href="#contact" class="btn btn-primary mt-4">Book My Free Strategy Call &rarr;</a>
   </div>
 </section>
@@ -662,15 +662,15 @@
 <section class="process-section section-gray pb-5">
   <div class="container pt-5">
     <div class="section-head text-center">
-      <div class="tag text-orange">My Process</div>
-      <h2 style="font-size: 2.8rem;">HOW I BUILD YOUR<br>REVENUE ENGINE.</h2>
+      <div class="tag text-orange">Our Process</div>
+      <h2 style="font-size: 2.8rem;">HOW WE BUILD YOUR<br>REVENUE ENGINE.</h2>
     </div>
     <div class="process-steps mt-5">
       <div class="step">
         <div class="step-num" style="position:relative;top:0;">01</div>
         <div class="step-label">DISCOVER</div>
         <h4>Deep Diagnostic</h4>
-        <p>I audit your SEO, paid accounts, funnels, and analytics. I find waste, gaps, and the highest-leverage opportunities before you spend a rupee.</p>
+        <p>We audit your SEO, paid accounts, funnels, and analytics. We find waste, gaps, and the highest-leverage opportunities before you spend a rupee.</p>
       </div>
       <div class="step">
         <div class="step-num" style="position:relative;top:0;">02</div>
@@ -728,7 +728,7 @@
             <option>Low Conversion Rates</option>
             <option>Scattered Attribution</option>
           </select>
-          <input type="text" name="goal" placeholder="Tell me about your 90-day revenue goal" style="margin-bottom: 0;">
+          <input type="text" name="goal" placeholder="Tell us about your 90-day revenue goal" style="margin-bottom: 0;">
         </div>
 
         <input type="url" name="website" placeholder="Your Website URL (e.g. https://sumomedia.in)">
