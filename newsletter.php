@@ -1,5 +1,7 @@
-﻿<?php
+<?php
+require_once 'includes/utils.php';
 ini_set('display_errors', '0');
+
 ob_start();
 register_shutdown_function(function() {
     $e = error_get_last();
@@ -84,6 +86,13 @@ try {
     $stmt->execute([$email, $source, $page_url ?: null, $utm_source ?: null,
                     $utm_medium ?: null, $utm_campaign ?: null,
                     $utm_content ?: null, $utm_term ?: null]);
+
+    // Send Telegram Notification
+    $tg_msg = "📩 <b>New Newsletter Subscriber!</b>\n"
+            . "<b>Email:</b> " . htmlspecialchars($email) . "\n"
+            . "<b>Source:</b> " . htmlspecialchars($source) . "\n"
+            . "<b>UTM:</b> " . htmlspecialchars($utm_source ?: 'Direct') . " / " . htmlspecialchars($utm_medium ?: 'N/A') . "\n";
+    telegram_notify($tg_msg);
 
 } catch (Exception $e) {
     error_log('Newsletter error: ' . $e->getMessage());

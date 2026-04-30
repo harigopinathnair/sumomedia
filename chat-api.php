@@ -15,6 +15,7 @@ header('X-Frame-Options: DENY');
 
 require_once __DIR__ . '/db.php';
 require_once __DIR__ . '/includes/captcha.php';
+require_once __DIR__ . '/includes/utils.php';
 
 // Auto-create tables
 $pdo->exec("CREATE TABLE IF NOT EXISTS chat_sessions (
@@ -44,33 +45,6 @@ function out(array $data): void {
     exit;
 }
 
-// === TELEGRAM CONFIGURATION ===
-// Place your Chat ID below once obtained (e.g. '123456789')
-define('TELEGRAM_BOT_TOKEN', '7721750928:AAHLm-Ma7DclGTxrUJ_Q2hYMGnYCtAhNajM');
-define('TELEGRAM_CHAT_ID', '5683352272'); 
-
-function telegram_notify($message) {
-    if (TELEGRAM_CHAT_ID === 'REPLACE_WITH_YOUR_CHAT_ID' || empty(TELEGRAM_CHAT_ID)) return;
-    $url = "https://api.telegram.org/bot" . TELEGRAM_BOT_TOKEN . "/sendMessage";
-    $data = [
-        'chat_id' => TELEGRAM_CHAT_ID,
-        'text' => $message,
-        'parse_mode' => 'HTML'
-    ];
-    $ch = curl_init($url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-    curl_setopt($ch, CURLOPT_TIMEOUT, 5); 
-    
-    // Disable SSL verification on localhost to avoid common cert issues
-    if (($_SERVER['HTTP_HOST'] ?? '') === 'localhost' || ($_SERVER['SERVER_NAME'] ?? '') === 'localhost') {
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-    }
-    
-    curl_exec($ch);
-    curl_close($ch);
-}
 
 function get_session(PDO $pdo, string $token) {
     $s = $pdo->prepare("SELECT * FROM chat_sessions WHERE token = ? LIMIT 1");

@@ -1,5 +1,5 @@
 <?php
-require_once 'db.php'; require_once 'includes/tracking.php';
+require_once 'db.php'; require_once 'includes/tracking.php'; require_once 'includes/utils.php';
 ini_set('display_errors', '0');
 ob_start();
 register_shutdown_function(function() {
@@ -128,6 +128,22 @@ try {
     // Send email notification via Mailgun
     require_once __DIR__ . '/mailer.php';
     send_lead_notification($lead_data);
+
+    // Send Telegram Notification
+    $tg_msg = "🔥 <b>New Lead Received! [" . ucfirst($form_type) . "]</b>\n"
+            . "<b>Name:</b> " . htmlspecialchars($lead_data['name']) . "\n"
+            . "<b>Email:</b> " . htmlspecialchars($lead_data['email']) . "\n"
+            . "<b>Phone:</b> " . htmlspecialchars($lead_data['phone'] ?: 'N/A') . "\n";
+            
+    if (!empty($lead_data['website']))   $tg_msg .= "<b>Site:</b> " . htmlspecialchars($lead_data['website']) . "\n";
+    if (!empty($lead_data['budget']))    $tg_msg .= "<b>Budget:</b> " . htmlspecialchars($lead_data['budget']) . "\n";
+    if (!empty($lead_data['challenge'])) $tg_msg .= "<b>Challenge:</b> " . htmlspecialchars($lead_data['challenge']) . "\n";
+    if (!empty($lead_data['goal']))      $tg_msg .= "<b>Goal:</b> " . htmlspecialchars($lead_data['goal']) . "\n";
+    
+    $tg_msg .= "\n<b>Source:</b> " . htmlspecialchars($lead_data['utm_source'] ?: 'Direct') . " / " . htmlspecialchars($lead_data['utm_medium'] ?: 'N/A') . "\n";
+    if (!empty($lead_data['pricing_plan'])) $tg_msg .= "<b>Plan:</b> " . htmlspecialchars($lead_data['pricing_plan']) . "\n";
+    
+    telegram_notify($tg_msg);
 
 } catch (Exception $e) {
     // Silently fail, don't break the success page for the user
