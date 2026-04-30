@@ -61,7 +61,13 @@ function telegram_notify($message) {
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
-    curl_setopt($ch, CURLOPT_TIMEOUT, 5); // don't hold up the user interface
+    curl_setopt($ch, CURLOPT_TIMEOUT, 5); 
+    
+    // Disable SSL verification on localhost to avoid common cert issues
+    if (($_SERVER['HTTP_HOST'] ?? '') === 'localhost' || ($_SERVER['SERVER_NAME'] ?? '') === 'localhost') {
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    }
+    
     curl_exec($ch);
     curl_close($ch);
 }
@@ -100,9 +106,9 @@ switch ($action) {
             ->execute([$token, $name, $email, $phone ?: null, $location ?: null, $page_url ?: null]);
         $sid = (int)$pdo->lastInsertId();
 
-        // Auto-greeting from admin
+        // Auto-greeting from SumoMedia Director
         $pdo->prepare("INSERT INTO chat_messages (session_id,sender,message) VALUES (?,?,?)")
-            ->execute([$sid, 'admin', "Hi $name! Thanks for reaching out. I'll get back to you shortly."]);
+            ->execute([$sid, 'admin', "Hi $name! 👋 Hari Gopinath here. Thanks for reaching out to SumoMedia. How can I help you grow today?"]);
 
         // Send Telegram Notification
         $tg_msg = "🟢 <b>New Chat Started [Session #$sid]</b>\n"
